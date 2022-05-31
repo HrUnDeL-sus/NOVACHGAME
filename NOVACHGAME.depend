@@ -329,7 +329,7 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1653912162 source:c:\users\prove\documents\codeblocks\novachgame\client.c
+1654009758 source:c:\users\prove\documents\codeblocks\novachgame\client.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -337,11 +337,22 @@
 	"world.h"
 	"camera.h"
 
-1653908851 c:\users\prove\documents\codeblocks\novachgame\client.h
+1653935750 c:\users\prove\documents\codeblocks\novachgame\client.h
 
-1653908851 source:c:\users\prove\documents\codeblocks\novachgame\client.h
+1653935750 source:c:\users\prove\documents\codeblocks\novachgame\client.h
 
-1653911557 source:c:\users\prove\documents\codeblocks\novachgame\main.c
+1653908851 ated upstream
+
+1654034344 source:c:\users\prove\documents\codeblocks\novachgame\main.c
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	"client.h"
+	"camera.h"
+
+1653914554 shed changes
 	<GL/gl.h>
 	<GL/glut.h>
 	<stdio.h>
@@ -349,7 +360,7 @@
 	"client.h"
 	"camera.h"
 
-1653912065 source:c:\users\prove\documents\codeblocks\novachgame\world.c
+1654033775 source:c:\users\prove\documents\codeblocks\novachgame\world.c
 	<GL/gl.h>
 	<GL/glut.h>
 	<GL/glu.h>

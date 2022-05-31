@@ -26,19 +26,23 @@ int count_world_objects=0;
 int count=0;
 void rendering_world() {
 
-	printf("\nCOUNT:%d",count_world_objects);
+
     for(int i=0; i<count_world_objects; i+=1) {
         glPushMatrix();
-
+		GLfloat mat_specular[]={1.0,1.0,1.0,1.0};
+		  GLfloat high_shininess[]={100.0};
         glEnable(GL_COLOR_MATERIAL);
-        glColorMaterial(GL_FRONT,GL_AMBIENT_AND_DIFFUSE);
+        glColorMaterial(GL_FRONT_AND_BACK,GL_AMBIENT_AND_DIFFUSE);
         glColor3f(world_objects[i].colorR,world_objects[i].colorG,world_objects[i].colorB);
+         glMaterialfv(GL_FRONT,GL_SHININESS,high_shininess);
+          glMaterialfv(GL_FRONT,GL_SPECULAR,mat_specular);
         glTranslated(world_objects[i].xPosition,world_objects[i].yPosition,world_objects[i].zPosition);
         glScaled(world_objects[i].xScale,world_objects[i].yScale,world_objects[i].zScale);
         glRotated(world_objects[i].xRotate,1,0,0);
         glRotated(world_objects[i].yRotate,0,1,0);
         glRotated(world_objects[i].zRotate,0,0,1);
         if(world_objects[i].type==3){
+
 				GLfloat light_position[]={world_objects[i].xPosition,world_objects[i].yPosition,world_objects[i].zPosition,1.0};
 	 glLightfv(GL_LIGHT0,GL_POSITION, light_position);
 			glutSolidSphere(1,15,15);

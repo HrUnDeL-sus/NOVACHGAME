@@ -38,19 +38,24 @@ int connect_to_server() {
 }
 void send_state(int state){
 int stat;
+ memset(&stat,0,sizeof(stat));
 stat=state;
-
-if(stat!=1)
 send(client_socket,&stat,sizeof(stat),0);
-if(stat==0)
-	recv(client_socket,&client_UID,sizeof(client_UID),0);
-if(stat==1){
+if(stat==0){
 	int n=0;
+	float data[3];
+	recv(client_socket,data,sizeof(data),0);
+	set_camera_position(data[0],data[1],data[2]);
+	enable_camera();
 	do{
 	float data[15];
-	send(client_socket,&stat,sizeof(stat),0);
-	recv(client_socket,data,sizeof(data),0);
+	int count=recv(client_socket,data,sizeof(data),0);
 	int isNull=1;
+	if(count!=15*4){
+		printf("ERROR");
+
+	}
+
 	for(int i=0;i<15;i+=1){
 		if(data[i]!=0)
 			isNull=0;
@@ -59,6 +64,6 @@ if(stat==1){
 		break;
 	add_object(data);
 
-	}while(n==0);
+	}while(0==0);
 }
 }
